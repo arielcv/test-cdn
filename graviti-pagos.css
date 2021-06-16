@@ -7,4 +7,12 @@
     background-color: #132c51;
     border-color: #132c51 !important;
     font-family: 'Open Sans' !important;
+    max-height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.g-logo-button{
+    max-height: 20px;
 }
