@@ -8,7 +8,7 @@ const logoAzul = "https://cdn.jsdelivr.net/gh/arielcv/test-cdn/logo-azul-1.svg"
  * @param {string} price - The price of the product related to button
  */
 const buttonCreator = (src, product, price) => (
-    `<button class="gpbutton" onclick="console.log('${product}', '${price}')">
+    `<button class="gpbutton" onclick="send('${product}',${price})">
         <img class="g-logo-button" src=${src}>
         <div id='x'>
             Paga con Graviti
@@ -18,16 +18,29 @@ const buttonCreator = (src, product, price) => (
 
 /**
  * Authenticate your website
+ * if the response status is 200, all your future requests will be successfull
+ * else it will print Error (just for developers)
  */
 function authenticate(){
     fetch("https://api.agify.io/?name=michael",{
         method:'GET',
     })
-    .then( response => response.json().then(({name}) => console.log(name)) )
+    .then( response => {
+        console.log(response)
+        if (response.ok){
+            response.json()
+            .then(({name}) => {
+                console.log(name)
+                localStorage.setItem('token','token')
+            })
+        } else {
+            console.log('Error')
+    }})
 }
 
-function send(id_product){
-    console.log(`Sending ${id_product}`)
+function send(product, price){
+    console.log(`The price of ${product} is $${price}`)
+    window.location = 'https://www.google.com'
 }
 
 function sum(product, price){
