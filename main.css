@@ -1,0 +1,19 @@
+.gpbutton{
+    border-radius: 25px;
+    border: 0;
+    padding: 5px 10px;
+    margin: auto;
+    color: white;
+    background-color: #132c51;
+    border-color: #132c51 !important;
+    font-family: 'Open Sans' !important;
+    max-height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.g-logo-button{
+    max-height: 20px;
+}
