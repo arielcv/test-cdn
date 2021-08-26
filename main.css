@@ -7,7 +7,8 @@
     background-color: #132c51;
     border-color: #132c51 !important;
     font-family: 'Open Sans' !important;
-    max-height: 30px;
+    height: 40px;
+    max-height: 60px;
     display: flex;
     flex-direction: row;
     align-items: center;
